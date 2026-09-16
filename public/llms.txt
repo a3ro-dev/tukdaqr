@@ -19,6 +19,7 @@ TukdaQR responds to the ₹2,000 threshold with the satirical line: “₹2,000 
 ## Primary sources and links
 
 - App: https://tukdaqr.vercel.app/
+- UPI charges 2026 explainer: https://tukdaqr.vercel.app/upi-charges-2026.html
 - Official Finance Ministry release: https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2310586&lang=1&reg=3
 - Source code: https://github.com/a3ro-dev/tukdaqr
 - Creator: https://a3ro.dev
