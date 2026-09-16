@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f4ed" />
+    <title>Split₹1999 — Split a total into UPI payment QR codes</title>
+    <meta name="description" content="Create multiple UPI payment QR codes of up to ₹1,999 each. Free, private, browser-only, and ready to download or print." />
+    <meta name="keywords" content="UPI QR code generator, split UPI payment, fixed amount UPI QR, UPI payment link, QR code India" />
+    <link rel="canonical" href="https://split1999.vercel.app/" />
+    <meta property="og:title" content="Split₹1999 — UPI QR splitter" />
+    <meta property="og:description" content="Turn one total into downloadable UPI QR codes of up to ₹1,999 each. Everything stays in your browser." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Split₹1999","applicationCategory":"FinanceApplication","operatingSystem":"Any","description":"A browser-only tool that divides a total into fixed amount UPI payment QR codes.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["UPI QR generation","Payment amount splitting","PNG downloads","Print layout","Browser-only processing"]}</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Split 1999 home"><span aria-hidden="true">₹</span> Split1999</a>
+      <nav aria-label="Primary navigation"><a href="#how">How it works</a><a href="/security.html">Security</a></nav>
+    </header>
+
+    <main id="main">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Browser-only UPI utility</p>
+        <h1 id="page-title">One total.<br><span>Cleanly split.</span></h1>
+        <p class="lede">Generate fixed amount UPI QR codes in chunks of up to ₹1,999. Your payment details stay on this device.</p>
+      </section>
+
+      <section class="workspace" aria-label="UPI QR generator">
+        <form id="payment-form" class="form-panel" novalidate>
+          <div class="section-heading"><span>01</span><div><h2>Payment details</h2><p>Add the account and full amount you need to collect.</p></div></div>
+          <label for="upi">UPI ID</label>
+          <input id="upi" name="upi" autocomplete="off" inputmode="email" placeholder="name@bank" required aria-describedby="upi-help upi-error" />
+          <small id="upi-help">Check this carefully. The tool cannot verify who owns it.</small>
+          <p class="error" id="upi-error" aria-live="polite"></p>
+
+          <label for="name">Account holder name</label>
+          <input id="name" name="name" autocomplete="name" placeholder="e.g. Asha Rao" maxlength="80" required aria-describedby="name-error" />
+          <p class="error" id="name-error" aria-live="polite"></p>
+
+          <div class="rule"></div>
+          <label for="amount">Full amount to collect</label>
+          <div class="money-input"><span aria-hidden="true">₹</span><input id="amount" name="amount" type="number" inputmode="decimal" min="1" max="199900" step="0.01" placeholder="4500" required aria-describedby="amount-help amount-error" /><b>INR</b></div>
+          <small id="amount-help">₹1 to ₹1,99,900. Up to 100 QR codes.</small>
+          <p class="error" id="amount-error" aria-live="polite"></p>
+
+          <label for="note">Payment note <span>Optional</span></label>
+          <input id="note" name="note" placeholder="e.g. Invoice 001" maxlength="80" />
+
+          <button class="primary" type="submit"><span>Generate QR codes</span><span aria-hidden="true">→</span></button>
+          <p class="local-note"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 10V7a5 5 0 0 1 10 0v3m-11 0h12v10H6z"/></svg> Nothing is uploaded or saved.</p>
+        </form>
+
+        <section class="result-panel" aria-labelledby="result-title">
+          <div class="result-top"><div><p class="eyebrow">Payment summary</p><h2 id="result-title">Ready when you are.</h2></div><button id="print-all" class="secondary" type="button" disabled>Print all</button></div>
+          <div id="empty" class="empty"><div class="qr-placeholder" aria-hidden="true"></div><p>Your generated QR codes will appear here.</p></div>
+          <div id="results" hidden>
+            <dl class="summary"><div><dt>Total to collect</dt><dd id="total-output"></dd></div><div><dt>QR codes</dt><dd id="count-output"></dd></div><div><dt>Maximum per QR</dt><dd>₹1,999</dd></div></dl>
+            <div class="safety" role="note"><strong>Before accepting payment</strong><span>Ask the payer to confirm your name and UPI ID in their payment app. This page cannot detect whether a payment succeeded.</span></div>
+            <div id="qr-grid" class="qr-grid"></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="how" id="how" aria-labelledby="how-title">
+        <div><p class="eyebrow">How it works</p><h2 id="how-title">A small tool with clear limits.</h2></div>
+        <ol><li><b>Divide</b><span>The total is split into ₹1,999 chunks plus the exact remainder.</span></li><li><b>Encode</b><span>Each QR contains a standard <code>upi://pay</code> link with payee, amount, currency, and note.</span></li><li><b>Verify</b><span>UPI apps handle authorization. Confirm every credit in your bank or UPI app.</span></li></ol>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">Good to know</p><h2 id="faq-title">Frequently asked questions</h2>
+        <details><summary>Why ₹1,999?</summary><p>It is the splitting rule used by this utility. It is not a general UPI transaction limit, tax threshold, or guarantee of fee treatment.</p></details>
+        <details><summary>Does this collect or track payments?</summary><p>No. It creates payment instructions in QR form. Check your bank or UPI app to confirm that each payment was received.</p></details>
+        <details><summary>Is my UPI ID sent anywhere?</summary><p>No. Generation happens in your browser. This site has no account system, database, analytics, or payment server.</p></details>
+      </section>
+    </main>
+
+    <footer><div><a class="brand" href="/"><span aria-hidden="true">₹</span> Split1999</a><p>A private utility for creating UPI payment QRs. Independent and not affiliated with NPCI, BHIM, any bank, or UPI app.</p></div><nav aria-label="Legal"><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="/terms.html">Terms</a></nav><p>© <span id="year"></span> Split1999</p></footer>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
