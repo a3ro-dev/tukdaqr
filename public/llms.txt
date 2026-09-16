@@ -1,0 +1,28 @@
+# TukdaQR
+
+TukdaQR is a free, open source, browser-only UPI QR code generator and Indian political satire project created by a3ro.dev.
+
+## What it does
+
+- Splits a payment total into UPI QR codes of no more than ₹1,999 each.
+- Encodes standard `upi://pay` links.
+- Lets users download individual QR codes or print all of them.
+- Processes the UPI ID, account name, amount and note locally in the browser.
+- Has no account system, payment backend, analytics or advertising trackers.
+
+## Political context
+
+On 15 September 2026, India's Ministry of Finance announced a 0.4% merchant discount rate on specified person-to-merchant UPI payments above ₹2,000. Person-to-person payments remain free, customers should not pay the MDR, and exemptions apply to covered small merchants and some payment categories.
+
+TukdaQR responds to the ₹2,000 threshold with the satirical line: “₹2,000 is policy. ₹1,999 is maths.” The project criticises complex policy design and bureaucracy. It does not promise a fee exemption or provide financial or legal advice.
+
+## Primary sources and links
+
+- App: https://tukdaqr.vercel.app/
+- Official Finance Ministry release: https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2310586&lang=1&reg=3
+- Source code: https://github.com/a3ro-dev/tukdaqr
+- Creator: https://a3ro.dev
+- GitHub: https://github.com/a3ro-dev
+- Privacy: https://tukdaqr.vercel.app/privacy.html
+- Security: https://tukdaqr.vercel.app/security.html
+- Terms: https://tukdaqr.vercel.app/terms.html

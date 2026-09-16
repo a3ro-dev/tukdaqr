@@ -9,7 +9,7 @@
     "test": "node --test"
   },
   "keywords": [],
-  "author": "",
+  "author": "a3ro.dev (https://a3ro.dev)",
   "license": "ISC",
   "type": "module",
   "dependencies": {
