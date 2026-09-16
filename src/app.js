@@ -32,7 +32,7 @@ form.addEventListener('submit', async event => {
   document.querySelector('#results').hidden = false;
   document.querySelector('#total-output').textContent = formatter.format(amount);
   document.querySelector('#count-output').textContent = parts.length;
-  document.querySelector('#result-title').textContent = `${parts.length} payment${parts.length === 1 ? '' : 's'} to collect`;
+  document.querySelector('#result-title').textContent = `${parts.length} perfectly normal payment${parts.length === 1 ? '' : 's'}`;
 
   const button = form.querySelector('button[type="submit"]');
   button.disabled = true;
@@ -43,12 +43,12 @@ form.addEventListener('submit', async event => {
     const image = await QRCode.toDataURL(uri, { width: 360, margin: 2, errorCorrectionLevel: 'M', color: { dark: '#142033', light: '#fffefb' } });
     const article = document.createElement('article');
     article.className = 'qr-sheet';
-    article.innerHTML = `<div class="qr-meta"><span>Payment ${index + 1}</span><span>${index + 1} of ${parts.length}</span></div><img src="${image}" width="240" height="240" alt="UPI payment QR ${index + 1} for ${formatter.format(part)}"/><strong>${formatter.format(part)}</strong><span>${data.upi.trim()}</span><a class="download" href="${image}" download="tukdaqr-payment-${index + 1}.png">Download PNG</a>`;
+    article.innerHTML = `<div class="qr-meta"><span>TUKDA / ${String(index + 1).padStart(2, '0')}</span><span class="qr-ready">ready</span></div><div class="qr-frame"><img src="${image}" width="240" height="240" alt="UPI payment QR ${index + 1} for ${formatter.format(part)}"/></div><div class="qr-amount"><small>scan to pay</small><strong>${formatter.format(part)}</strong></div><p class="qr-payee"><span>${data.upi.trim()}</span><b>${index + 1} of ${parts.length}</b></p><a class="download" href="${image}" download="tukdaqr-payment-${index + 1}.png">save this QR <span aria-hidden="true">↓</span></a>`;
     qrGrid.append(article);
   }
 
   button.disabled = false;
-  button.firstElementChild.textContent = 'Regenerate QR codes';
+  button.firstElementChild.textContent = 'split it again';
   printButton.disabled = false;
   document.querySelector('#result-title').focus?.();
 });
