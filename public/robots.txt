@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://split1999.vercel.app/sitemap.xml
+Sitemap: https://tukdaqr.vercel.app/sitemap.xml

@@ -1,4 +1,4 @@
-# Split₹1999 Design System
+# TukdaQR Design System
 
 ## Theme
 

@@ -10,7 +10,7 @@ Indian individuals and small businesses who need to collect one total through se
 
 ## Product Purpose
 
-Create standards based UPI payment QR codes entirely in the browser. Split₹1999 divides a total into chunks of at most ₹1,999, makes each QR downloadable, and explains what the tool can and cannot verify.
+Create standards based UPI payment QR codes entirely in the browser. TukdaQR divides a total into chunks of at most ₹1,999, makes each QR downloadable, and explains what the tool can and cannot verify.
 
 ## Brand Personality
 

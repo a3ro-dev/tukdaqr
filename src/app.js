@@ -43,7 +43,7 @@ form.addEventListener('submit', async event => {
     const image = await QRCode.toDataURL(uri, { width: 360, margin: 2, errorCorrectionLevel: 'M', color: { dark: '#142033', light: '#fffefb' } });
     const article = document.createElement('article');
     article.className = 'qr-sheet';
-    article.innerHTML = `<div class="qr-meta"><span>Payment ${index + 1}</span><span>${index + 1} of ${parts.length}</span></div><img src="${image}" width="240" height="240" alt="UPI payment QR ${index + 1} for ${formatter.format(part)}"/><strong>${formatter.format(part)}</strong><span>${data.upi.trim()}</span><a class="download" href="${image}" download="split1999-payment-${index + 1}.png">Download PNG</a>`;
+    article.innerHTML = `<div class="qr-meta"><span>Payment ${index + 1}</span><span>${index + 1} of ${parts.length}</span></div><img src="${image}" width="240" height="240" alt="UPI payment QR ${index + 1} for ${formatter.format(part)}"/><strong>${formatter.format(part)}</strong><span>${data.upi.trim()}</span><a class="download" href="${image}" download="tukdaqr-payment-${index + 1}.png">Download PNG</a>`;
     qrGrid.append(article);
   }
 

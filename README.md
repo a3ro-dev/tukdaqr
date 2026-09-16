@@ -1,4 +1,4 @@
-# Split1999
+# TukdaQR
 
 A private, browser-only UPI QR splitter. It divides one amount into chunks of at most ₹1,999 and creates downloadable QR codes using standard `upi://pay` links.
 
