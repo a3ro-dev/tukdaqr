@@ -26,7 +26,9 @@ form.addEventListener('submit', async event => {
   showError('amount', amountValid ? '' : 'Enter an amount from ₹1 to ₹1,99,900.');
   if (!upiValid || !nameValid || !amountValid) return form.querySelector('[aria-invalid="true"]').focus();
 
-  const parts = splitAmount(amount);
+  const limit = Number(data.limit);
+  const parts = splitAmount(amount, limit);
+  document.querySelector('#limit-output').textContent = formatter.format(limit);
   qrGrid.replaceChildren();
   document.querySelector('#empty').hidden = true;
   document.querySelector('#results').hidden = false;
