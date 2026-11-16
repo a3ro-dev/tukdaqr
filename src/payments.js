@@ -1,8 +1,6 @@
-const LIMIT = 1999;
-
-export const splitAmount = total => {
+export const splitAmount = (total, limit = 1999) => {
   const paise = Math.round(total * 100);
-  const chunk = LIMIT * 100;
+  const chunk = limit * 100;
   const count = Math.ceil(paise / chunk);
   return Array.from({ length: count }, (_, index) => Math.min(chunk, paise - index * chunk) / 100);
 };

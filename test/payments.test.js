@@ -8,6 +8,11 @@ test('splits rupees exactly without losing paise', () => {
   assert.equal(splitAmount(199900).reduce((sum, value) => sum + value, 0), 199900);
 });
 
+test('splits by the chosen per-QR limit', () => {
+  assert.deepEqual(splitAmount(10000, 4999), [4999, 4999, 2]);
+  assert.deepEqual(splitAmount(4999, 4999), [4999]);
+});
+
 test('encodes a standard UPI payment URI', () => {
   assert.equal(paymentUri({ upi: 'asha@bank', name: 'Asha Rao', note: 'Invoice 7' }, 1999, 0), 'upi://pay?pa=asha%40bank&pn=Asha+Rao&am=1999.00&cu=INR&tn=Invoice+7+%281%29');
 });
